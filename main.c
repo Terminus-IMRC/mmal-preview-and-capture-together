@@ -94,6 +94,7 @@ int main()
     _check_mmal(mmal_port_enable(cp_render_1->control, callback_control));
     _check_mmal(config_port(cp_render_1->input[0], ENCODING_PREVIEW, WIDTH_PREVIEW, HEIGHT_PREVIEW));
     {
+        /* Right side of the screen. */
         MMAL_RECT_T dest_rect = {
             .x = 0, .y = 0,
             .width = SCREEN_WIDTH / 2, .height = SCREEN_HEIGHT
@@ -113,6 +114,7 @@ int main()
     _check_mmal(mmal_port_enable(cp_render_2->control, callback_control));
     _check_mmal(config_port(cp_render_2->input[0], ENCODING_CAPTURE, WIDTH_CAPTURE, HEIGHT_CAPTURE));
     {
+        /* Left side of the screen. */
         MMAL_RECT_T dest_rect = {
             .x = SCREEN_WIDTH / 2, .y = 0,
             .width = SCREEN_WIDTH / 2, .height = SCREEN_HEIGHT
